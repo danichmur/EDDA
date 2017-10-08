@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Edda</string>
+    <string name="manage">Manage</string>
+    <string name="products">Products</string>
+    <string name="recipes">Recipes</string>
+    <string name="title_activity_manage">ManageActivity</string>
+    <string name="title_activity_recepies">RecepiesActivity</string>
+    <string name="title_activity_bottom_bar">BottomBarActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="product_name">Name:</string>
+    <string name="product_count">Count:</string>
+    <string name="product_measurement">Measurement:</string>
+    <string name="bSave">Save</string>
+</resources>

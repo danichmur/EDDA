@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<p id="notice"><%= notice %></p>
+<div class="span7">   
+<h1>Recipes</h1>
+<table class="w3-table w3-bordered w3-striped">
+  <thead>
+	  <%= link_to 'New Recipe', new_recipe_path %>
+    <tr>
+      <th scope="row">Name</th>
+	  <th scope="row">Ingredients</th>
+      <th scope="row">Description</th>
+      <th scope="row">Img url</th>
+      <th scope="row"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr scope="row">
+        <td><%= recipe.name %></td>
+		<td>
+			<table>
+			  <tbody>
+			     <% recipe.ingredients.each do |ingredient| %>
+		         <tr>
+		          <td><%= ingredient.name %></td>
+				  <td>:</td>
+				  <td><%= ingredient.count %></td>
+	             </tr>
+	            <% end %>
+	          </tbody>
+	        </table>			
+		</td>
+        <td><%= recipe.description %></td>
+        <td><%= recipe.img_url %></td>
+        <td><%= link_to 'Show', recipe %></td>
+        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+</body>
+</html>

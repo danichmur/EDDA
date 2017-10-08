@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.daniilmuraveyko.edda.activities.RecipesActivity"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+
+        <ListView
+            android:id="@+id/list_for_recipe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="44dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="300dp"
+        android:layout_weight="0.01"
+        android:clickable="true"
+        android:onClick="onDoneButtonClick"
+        app:backgroundTint="@android:color/background_light"
+        app:fabSize="mini"
+        app:srcCompat="@drawable/ic_done_black_24dp" />
+
+    <include
+        layout="@layout/activity_bottom_bar"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp" />
+</LinearLayout>
