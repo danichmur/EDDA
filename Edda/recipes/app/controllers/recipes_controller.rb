@@ -5,11 +5,16 @@ class RecipesController < ApplicationController
   # GET /recipes.json
   def index
     @recipes = Recipe.all
+    respond_to do |format|
+      format.html
+      format.json { render :json => @recipes.as_json()}
+    end
   end
 
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+    render :json => @recipe.as_json()
   end
 
   # GET /recipes/new
@@ -43,7 +48,8 @@ class RecipesController < ApplicationController
     respond_to do |format|
       if @recipe.update(recipe_params)
         format.html { redirect_to @recipe, notice: 'Recipe was successfully updated.' }
-        format.json { render :show, status: :ok, location: @recipe }
+        p "AAA"
+        format.json { render :json => @recipe.as_json()}
       else
         format.html { render :edit }
         format.json { render json: @recipe.errors, status: :unprocessable_entity }

@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <p><strong><%= form.label :name %></strong></p>
     <%= form.text_field :name, id: :recipe_name %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
   <p><strong>Ingredients:</strong></p>
 	 <div id="ingredients">
 	       <%= form.fields_for :ingredients do |ingredient| %>
@@ -29,12 +29,12 @@
 	     </div>
   </div>
   
-  <div class="field">
+  <div class="form-group">
     <p><strong><%= form.label :description %></strong></p>
     <%= form.text_area :description, id: :recipe_description %>
   </div>
 
-  <div class="field">
+ <div class="form-group">
     <p><strong><%= form.label :img_url %></strong></p>
     <%= form.text_field :img_url, id: :recipe_img_url %>
   </div>

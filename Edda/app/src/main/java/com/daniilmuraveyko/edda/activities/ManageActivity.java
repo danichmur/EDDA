@@ -2,14 +2,12 @@ package com.daniilmuraveyko.edda.activities;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
-import android.widget.ListView;
 
-import com.daniilmuraveyko.edda.Product;
+import com.daniilmuraveyko.edda.entity.Product;
 import com.daniilmuraveyko.edda.R;
 
 import java.util.ArrayList;

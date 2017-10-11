@@ -1,4 +1,4 @@
-package com.daniilmuraveyko.edda;
+package com.daniilmuraveyko.edda.entity;
 
 /**
  * Created by danichmur on 05.10.17.
@@ -6,9 +6,11 @@ package com.daniilmuraveyko.edda;
 
 import com.orm.SugarRecord;
 
+import java.io.Serializable;
 import java.util.Comparator;
 
-public class Product extends SugarRecord{
+public class Product extends SugarRecord implements Serializable{
+    private static final long serialVersionUID = 1L;
 
     String name;
     float count;
@@ -18,8 +20,8 @@ public class Product extends SugarRecord{
         return name;
     }
 
-    public float getCount() {
-        return count;
+    public int getCount() {
+        return (int)count;
     }
 
     public String getMeasure() {

@@ -1,4 +1,4 @@
-package com.daniilmuraveyko.edda;
+package com.daniilmuraveyko.edda.utilites;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.daniilmuraveyko.edda.R;
+import com.daniilmuraveyko.edda.entity.Product;
 
 import java.util.List;
 
@@ -41,12 +44,12 @@ public class ProductAdapter extends BaseAdapter {
         View rowView = LayoutInflater.from(context).
                 inflate(R.layout.product_list_item, parent, false);
 
-        TextView text1 = (TextView) rowView.findViewById(R.id.name);
-        TextView text2 = (TextView) rowView.findViewById(R.id.info);
+        TextView text1 = rowView.findViewById(R.id.name);
+        TextView text2 = rowView.findViewById(R.id.info);
 
-        text1.setText(products.get(position).name);
+        text1.setText(products.get(position).getName());
         Product product = products.get(position);
-        text2.setText((int) product.count + " " + product.measure);
+        text2.setText((int) product.getCount() + " " + product.getMeasure());
         return rowView;
     }
 }

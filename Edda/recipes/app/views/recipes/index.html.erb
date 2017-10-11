@@ -6,15 +6,15 @@
 <p id="notice"><%= notice %></p>
 <div class="span7">   
 <h1>Recipes</h1>
-<table class="w3-table w3-bordered w3-striped">
+<table class="table table-bordered table-striped">
   <thead>
 	  <%= link_to 'New Recipe', new_recipe_path %>
     <tr>
-      <th scope="row">Name</th>
-	  <th scope="row">Ingredients</th>
-      <th scope="row">Description</th>
-      <th scope="row">Img url</th>
-      <th scope="row"></th>
+      <th>Name</th>
+	  <th>Ingredients</th>
+	  <th>&nbsp;</th>
+	  <th>&nbsp;</th>
+	  <th>&nbsp;</th>
     </tr>
   </thead>
 
@@ -35,8 +35,6 @@
 	          </tbody>
 	        </table>			
 		</td>
-        <td><%= recipe.description %></td>
-        <td><%= recipe.img_url %></td>
         <td><%= link_to 'Show', recipe %></td>
         <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
         <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>

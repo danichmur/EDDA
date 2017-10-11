@@ -47,7 +47,7 @@ public abstract class BaseActivity extends AppCompatActivity
             } else if (itemId == R.id.navigation_products) {
                 startActivity(new Intent(this, ProductActivity.class));
             } else if (itemId == R.id.navigation_recipes) {
-                startActivity(new Intent(this, RecipesActivity.class));
+                startActivity(new Intent(this, ProductChooseActivity.class));
             }
             finish();
         }, 300);
