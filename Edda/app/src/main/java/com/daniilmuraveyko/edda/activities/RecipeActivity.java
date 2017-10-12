@@ -2,12 +2,18 @@ package com.daniilmuraveyko.edda.activities;
 
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.daniilmuraveyko.edda.R;
-import com.daniilmuraveyko.edda.entity.Recipe;
+import com.daniilmuraveyko.edda.model.Ingredient;
+import com.daniilmuraveyko.edda.model.Product;
+import com.daniilmuraveyko.edda.model.Recipe;
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class RecipeActivity extends BaseActivity {
 
@@ -37,8 +43,25 @@ public class RecipeActivity extends BaseActivity {
         Picasso.with(this).load(recipe.getImg_url())
                 .resize(displayMetrics.widthPixels, displayMetrics.heightPixels / 3).centerInside().into(image);
         tvName.setText(recipe.getName());
-        tvIngredients.setText(recipe.ingredientsToText());
+        tvIngredients.setText("Ингредиенты:\n" + recipe.ingredientsToText());
         tvDescription.setText(recipe.getDescription());
+    }
+
+    public void onDoneButtonClick(View view)
+    {
+        List<Ingredient> ingredients = recipe.getIngredients();
+        for(Ingredient ingredient : ingredients){
+            List<Product> products = Product.find(Product.class, "name = ?", ingredient.getName());
+            if(products.size() == 0){
+                onBackPressed();
+                return;
+            }
+
+            products.get(0).subCount(ingredient.getCount());
+            products.get(0).saveChanges();
+        }
+        onBackPressed();
+
     }
 
     @Override

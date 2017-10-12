@@ -9,7 +9,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
-import com.daniilmuraveyko.edda.entity.Product;
+import com.daniilmuraveyko.edda.model.Product;
 import com.daniilmuraveyko.edda.R;
 
 import java.util.ArrayList;

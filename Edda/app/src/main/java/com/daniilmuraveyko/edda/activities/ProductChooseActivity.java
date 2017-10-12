@@ -6,18 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
-import com.daniilmuraveyko.edda.entity.Recipe;
+import com.daniilmuraveyko.edda.model.Recipe;
 import com.daniilmuraveyko.edda.utilites.JsonParser;
-import com.daniilmuraveyko.edda.entity.Product;
+import com.daniilmuraveyko.edda.model.Product;
 import com.daniilmuraveyko.edda.R;
 import com.daniilmuraveyko.edda.utilites.ProductChooseAdapter;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
-import java.io.Serializable;
 import java.util.List;
 
-import static com.daniilmuraveyko.edda.entity.Product.COMPARE_ALPHABETIC;
+import static com.daniilmuraveyko.edda.model.Product.COMPARE_ALPHABETIC;
 
 public class ProductChooseActivity extends BaseActivity {
 

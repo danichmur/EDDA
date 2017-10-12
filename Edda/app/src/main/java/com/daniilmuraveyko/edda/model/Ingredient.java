@@ -1,4 +1,4 @@
-package com.daniilmuraveyko.edda.entity;
+package com.daniilmuraveyko.edda.model;
 
 
 import java.io.Serializable;
@@ -9,6 +9,14 @@ import java.io.Serializable;
 
 public class Ingredient implements Serializable{
     private static final long serialVersionUID = 1L;
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCount() {
+        return count;
+    }
 
     String name;
     int count;

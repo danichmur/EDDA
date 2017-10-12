@@ -33,7 +33,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ManageActivity" />
+        <activity android:name=".activities.ManageActivity"
+            android:windowSoftInputMode="adjustPan|adjustResize"/>
         <activity android:name=".activities.ProductChooseActivity" />
         <activity android:name=".activities.RecipesActivity" />
         <activity android:name=".activities.RecipeActivity" />

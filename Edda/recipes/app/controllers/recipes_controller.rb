@@ -10,7 +10,15 @@ class RecipesController < ApplicationController
       format.json { render :json => @recipes.as_json()}
     end
   end
-
+  
+  def find_recipe
+    @recipes = Recipe.find_recipe(params[:name], params[:count])
+    respond_to do |format|
+      format.html
+      format.json { render :json => @recipes.as_json()}
+    end
+  end
+  
   # GET /recipes/1
   # GET /recipes/1.json
   def show
@@ -29,7 +37,7 @@ class RecipesController < ApplicationController
   # POST /recipes
   # POST /recipes.json
   def create
-    @recipe = Recipe.new(recipe_params)
+    @recipe = Recipe.where(:ingredients)
 
     respond_to do |format|
       if @recipe.save
@@ -48,7 +56,6 @@ class RecipesController < ApplicationController
     respond_to do |format|
       if @recipe.update(recipe_params)
         format.html { redirect_to @recipe, notice: 'Recipe was successfully updated.' }
-        p "AAA"
         format.json { render :json => @recipe.as_json()}
       else
         format.html { render :edit }

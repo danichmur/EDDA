@@ -1,10 +1,6 @@
 package com.daniilmuraveyko.edda.utilites;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +10,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.daniilmuraveyko.edda.R;
-import com.daniilmuraveyko.edda.entity.Ingredient;
-import com.daniilmuraveyko.edda.entity.Recipe;
+import com.daniilmuraveyko.edda.model.Ingredient;
+import com.daniilmuraveyko.edda.model.Recipe;
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 

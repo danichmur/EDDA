@@ -1,4 +1,4 @@
-package com.daniilmuraveyko.edda.entity;
+package com.daniilmuraveyko.edda.model;
 
 import java.io.Serializable;
 import java.util.List;

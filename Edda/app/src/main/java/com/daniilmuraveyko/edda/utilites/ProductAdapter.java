@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.daniilmuraveyko.edda.R;
-import com.daniilmuraveyko.edda.entity.Product;
+import com.daniilmuraveyko.edda.model.Product;
 
 import java.util.List;
 

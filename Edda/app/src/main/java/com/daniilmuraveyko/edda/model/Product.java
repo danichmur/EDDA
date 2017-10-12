@@ -1,4 +1,4 @@
-package com.daniilmuraveyko.edda.entity;
+package com.daniilmuraveyko.edda.model;
 
 /**
  * Created by danichmur on 05.10.17.
@@ -13,6 +13,11 @@ public class Product extends SugarRecord implements Serializable{
     private static final long serialVersionUID = 1L;
 
     String name;
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
     float count;
     String measure;
 
@@ -52,4 +57,10 @@ public class Product extends SugarRecord implements Serializable{
 
     public static final Comparator<Product> COMPARE_ALPHABETIC = (product, t1) -> product.name.compareTo(t1.name);
 
+    public void saveChanges(){
+        if(getCount() <= 0)
+            delete();
+        else
+            save();
+    }
 }

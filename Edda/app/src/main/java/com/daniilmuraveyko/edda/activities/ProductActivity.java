@@ -3,13 +3,13 @@ package com.daniilmuraveyko.edda.activities;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import com.daniilmuraveyko.edda.entity.Product;
+import com.daniilmuraveyko.edda.model.Product;
 import com.daniilmuraveyko.edda.utilites.ProductAdapter;
 import com.daniilmuraveyko.edda.R;
 
 import java.util.List;
 
-import static com.daniilmuraveyko.edda.entity.Product.COMPARE_ALPHABETIC;
+import static com.daniilmuraveyko.edda.model.Product.COMPARE_ALPHABETIC;
 
 public class ProductActivity extends BaseActivity {
 
