@@ -41,16 +41,17 @@ public class RecipesActivity extends BaseActivity {
         else{
             url = urlWithParams();
         }
+        System.out.println(url);
         DownloadRecipes dr = new DownloadRecipes();
         dr.execute();
     }
 
     private String urlWithoutParams(){
-        return "http://192.168.100.3:3000/recipes.json";
+        return "http://10.160.67.191:3000/recipes.json";
     }
 
     private String urlWithParams(){
-        String url = "http://192.168.100.3:3000/recipes/find.json?";
+        String url = "http://10.160.67.191:3000/recipes/find_recipe.json?";
         String name = "name[]";
         String count = "count[]";
         for(Product product : ingredients){

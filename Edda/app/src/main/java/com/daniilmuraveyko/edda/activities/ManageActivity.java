@@ -22,7 +22,6 @@ public class ManageActivity extends BaseActivity {
 
     AutoCompleteTextView product_name;
     AutoCompleteTextView product_measure;
-    Switch product_switch;
     EditText product_count;
     List<Product> products;
 
@@ -32,7 +31,6 @@ public class ManageActivity extends BaseActivity {
         product_name = (AutoCompleteTextView) findViewById(R.id.autocompName);
         product_measure = (AutoCompleteTextView) findViewById(R.id.autoCompMeasure);
         product_count = (EditText) findViewById(R.id.autocompCount);
-        product_switch = (Switch) findViewById(R.id.switch1);
         products = Product.listAll(Product.class);
         fillNames();
         fillMeasurements();
@@ -62,17 +60,10 @@ public class ManageActivity extends BaseActivity {
         product_measure.setAdapter(adapter);
     }
 
-    public void onSwitchChanges(View view){
-        if(product_switch.isChecked())
-            product_switch.setText(R.string.eat);
-        else
-            product_switch.setText(R.string.add);
-        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-        inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
-    }
-
     public void onSaveButtonClick(View view)
     {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
         if(TextUtils.isEmpty(product_name.getText()) ||
                 TextUtils.isEmpty(product_count.getText()) ||
                 TextUtils.isEmpty(product_measure.getText())) {
@@ -87,14 +78,9 @@ public class ManageActivity extends BaseActivity {
         List<Product> p = Product.find(Product.class, "name = ?", name);
         if(!p.isEmpty()) {
             Product product = p.get(0);
-            if(product_switch.isChecked()) {
-                product.subCount(count);
-                product.saveChanges();
-            }
-            else {
-                product.addCount(count);
-                product.save();
-            }
+            product.addCount(count);
+            product.save();
+
         }
         else {
             Product product = new Product(name, count, measurement);

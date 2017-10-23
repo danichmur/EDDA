@@ -34,7 +34,7 @@
                 android:id="@+id/autocompName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/productCount"
@@ -51,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/productMeasure"
@@ -67,19 +67,7 @@
                 android:id="@+id/autoCompMeasure"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp" />
-
-            <Switch
-                android:id="@+id/switch1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="8dp"
-                android:onClick="onSwitchChanges"
-                android:text="@string/add"
-                android:textAllCaps="true"
-                android:textColor="@color/cardview_dark_background"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <Button
                 android:id="@+id/buttonSave"

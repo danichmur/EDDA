@@ -13,8 +13,9 @@
     <string name="product_count">Count:</string>
     <string name="product_measurement">Measurement:</string>
     <string name="bSave">Save</string>
-    <string name="add">ADD</string>
-    <string name="eat">EAT</string>
     <string name="bDone">Done!</string>
     <string name="noRecipes">Recipes not found :(</string>
+    <string name="eat">Eat!</string>
+    <string name="cancel">Cancel</string>
+    <string name="dialogTitle">How much to eat?</string>
 </resources>
